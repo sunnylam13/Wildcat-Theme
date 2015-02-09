@@ -38,23 +38,12 @@ $iconColor:orange;
 	padding-top: 2.5%;
 	& .themeTitleBox {
 		@include column(3);
+		@include tabletR {
+			display: block;
+			@include column(12);
+		}
 		& a.themeName {
 			position: relative;
-			// &::before {
-			// 	// replace the content value with the corresponding value from the list below
-			//     content: "\f188";
-			//     font-family: FontAwesome;
-			//     font-style: normal;
-			//     font-weight: normal;
-			//     text-decoration: inherit;
-			// 	//*--adjust as necessary--*/
-			//     color: orange;
-			//     font-size: 18px;
-			//     padding-right: 1.5em;
-			//     position: absolute;
-			//     top: 10px;
-			//     left: 0;
-			// }
 			color:$navbarfontcolor;
 			text-decoration: none;
 			text-transform: uppercase;
@@ -70,29 +59,44 @@ $iconColor:orange;
 			&:link {
 				color: $navbarfontcolor;
 			}
-			// &:before {
-			// 	position:absolute;
-			// 	font-family: FontAwesome;
-			// 	top:0;
-			// 	left:-5px;
-			// 	content: "\f188"; //<--- this is your text. You can also use UTF-8 character codes as I do here
-			// 	background: $iconColor;
-			// 	background: $iconColor;
-			// }
 		}
 		& i.fa {
 			color: $buttonbackcolor;
 			margin-right: 1em;
+			@include tabletR {
+				margin-right: 0.5em;
+			}
 		}
 	}
 	
 	& .navbarBox {
 		@include column(9);
+		@include tabletR {
+			display: inline-block;
+			@include column(12);
+			float: left;
+			padding-top: 2%;
+			padding-bottom: 2%;
+		}
 		& ul {
 			float: right;
+			@include tabletR {
+				// float: left;
+				// text-align: center;
+				// display: inline-block;
+				// margin: 0 auto;
+				float: none;
+				padding-left: 11%;
+			}
 			& li {
 				list-style-type: none;
 				float: left;
+				@include tabletR {
+					// display: inline-block;
+					// text-align: center;
+					display: inline-block;
+					text-align: center;
+				}
 				& a {
 					color: $navbarfontcolor;
 					// padding: 2% 5% 2% 5%;

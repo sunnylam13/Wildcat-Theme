@@ -15,7 +15,7 @@
 
 $buttonbackcolor: #FF6600;
 $iconColor: lightgrey;
-$downloadIconBack: lightgreen;
+$downloadIconBack: #CC6633;
 $subNavMenuBackColor: darken(white,5%);
 $subNavMenuFontColor: grey;
 
@@ -103,6 +103,7 @@ $subNavMenuFontColor: grey;
 					float: left;
 					background: $subNavMenuBackColor;
 					// left: 8%;
+					top: 101%;
 					& li {
 						display: list-item;
 						float: none;
@@ -166,6 +167,9 @@ header#demo-header {
 			// @include column(6);
 			padding-top: 4.6%;
 		}
+		@include tabletR {
+			padding-top: 5.5%;
+		}
 		& a {
 			background: $buttonbackcolor;
 			padding: 3% 3% 3% 3%;
@@ -209,6 +213,9 @@ header#demo-header {
 			margin-bottom: 0;
 			padding-top: 3.2%;
 			@include responsiveNavMenu;
+		}
+		@include tabletR {
+			padding-top: 3.5%;
 		}
 		& a {
 			display: inline;

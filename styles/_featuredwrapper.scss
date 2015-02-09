@@ -78,9 +78,12 @@ $linkfontcolor:white;
 		display: inline-block;
 		// interesting... you can use line-height to help position the FA icon so it's as close to vertical centred as possible
 		// does mean that if the screen size changes things may be messy especially if the width and size of the icon was set with pixels instead of em or %
-		line-height: 2.6em;
+		line-height: 2.65em;
 		font-size: 4em;
 		margin-bottom: 1em;
+		@include tabletR {
+			line-height: 2.7em;
+		}
 	}
 	& a {
 		display: inline;
