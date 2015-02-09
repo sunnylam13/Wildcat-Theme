@@ -16,6 +16,8 @@
 $buttonbackcolor: #FF6600;
 $iconColor: lightgrey;
 $downloadIconBack: lightgreen;
+$subNavMenuBackColor: darken(white,5%);
+$subNavMenuFontColor: grey;
 
 ////////////////////////////////////////////
 ///// 		MIXINS
@@ -68,18 +70,63 @@ $downloadIconBack: lightgreen;
 }
 
 @mixin responsiveNavMenu {
-	& .specialNavMenu {
-		display: inline-block;
-		color: darken(lightgrey,30%);
-		border: 2px solid lightgrey;
-		padding: 1em 1.2em 1em 1.2em;
-		border-radius: 5px;
-		@include transitionEffectSelected(0.15s);
-		// text-shadow: 0 0 1px #203A8B;
-		&:hover {
-			color: $downloadIconBack;
-			border: 2px solid $downloadIconBack;
+	& .mainNavBar {
+		margin: 0;
+		padding: 0;
+		& .specialNavMenu {
+			display: inline-block;
+			color: darken($iconColor,30%);
+			border: 2px solid $iconColor;
+			padding: 1em 1.2em 1em 1.2em;
+			border-radius: 5px;
+			@include transitionEffectSelected(0.15s);
+			// text-shadow: 0 0 1px #203A8B;
+			cursor:pointer;
+			&:hover {
+				color: $downloadIconBack;
+				border: 2px solid $downloadIconBack;
+			}
 		}
+		& li {
+			list-style: none;
+			position: relative;
+			&:hover {
+				display: block;
+				float: none;
+				& ul.responsiveNavList {
+					position: absolute;
+					// since you've set .responsiveNavList to display none in the main CSS code you must re-enable the display of it by using display: list-item...
+					// this is the position to do it
+					display: list-item;
+					margin: 0;
+					padding: 0;
+					float: left;
+					background: $subNavMenuBackColor;
+					// left: 8%;
+					& li {
+						display: list-item;
+						float: none;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+					}
+					& a {
+						text-decoration: none;
+						// border: 2px solid $iconColor;
+						border-radius: 3px;
+						color: $subNavMenuFontColor;
+						// padding: 1em 1.6em 1em 1.6em;
+						padding: 1em 0.9em 1em 0.9em;
+						text-transform: uppercase;
+						@include transitionEffectSelected(0.15s);
+						&:hover {
+							color: $downloadIconBack;
+							// border: 2px solid $downloadIconBack;
+						}
+					}
+				}
+			}
+		}	
 	}
 }
 
@@ -152,6 +199,9 @@ header#demo-header {
 		& .specialNavMenu {
 			display: none;
 		}
+		& .responsiveNavList {
+			display: none;
+		}
 		@include desktopR {
 			// @include column(6);
 			padding-left: 0;
@@ -191,37 +241,5 @@ header#demo-header {
 			@include headerFixedIconButtons;
 			@include headerFixedArrowButtons;
 		}
-		
-		
-		// & .button.square span {
-		// 	// this is very interesting... by turning the span text into position absolute you make it vanish off the page
-		// 	position: absolute;
-		// 	text-indent: -9999px;
-		// }
-		// & .button span {
-		// 	display: none;
-		// }
-		// & .button.square.back span {
-		// 	position: relative;
-		// 	& ::before {
-		// 		position:absolute;
-		//         font-family: FontAwesome;
-		//         top:0;
-		//         left:-5px;
-		//         content: "\f015";
-		//         color:$iconColor;
-		// 	}
-		// }
-		// & span.fa.fa-home {
-		// 	position: relative;
-		// 	&:before {
-		// 		position:absolute;
-		//         font-family: FontAwesome;
-		//         top:0;
-		//         left:-5px;
-		//         content: "\f015";
-		//         color:black;
-		// 	}
-		// }
 	}
 }
