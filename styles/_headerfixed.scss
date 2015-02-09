@@ -88,11 +88,12 @@ $subNavMenuFontColor: grey;
 			}
 		}
 		& li {
-			list-style: none;
+			list-style-type: none;
 			position: relative;
 			&:hover {
 				display: block;
 				float: none;
+				// to edit the ul.responsiveNavList sub menu simply cut and paste it out of the &:hover into a position within & li
 				& ul.responsiveNavList {
 					position: absolute;
 					// since you've set .responsiveNavList to display none in the main CSS code you must re-enable the display of it by using display: list-item...
@@ -104,6 +105,8 @@ $subNavMenuFontColor: grey;
 					background: $subNavMenuBackColor;
 					// left: 8%;
 					top: 101%;
+					width: 177%;
+					border-radius: 15px;
 					& li {
 						display: list-item;
 						float: none;
@@ -112,6 +115,7 @@ $subNavMenuFontColor: grey;
 						padding: 0;
 					}
 					& a {
+						display: block;
 						text-decoration: none;
 						// border: 2px solid $iconColor;
 						border-radius: 3px;
@@ -119,6 +123,7 @@ $subNavMenuFontColor: grey;
 						// padding: 1em 1.6em 1em 1.6em;
 						padding: 1em 0.9em 1em 0.9em;
 						text-transform: uppercase;
+						// width: auto;
 						@include transitionEffectSelected(0.15s);
 						&:hover {
 							color: $downloadIconBack;
@@ -127,6 +132,7 @@ $subNavMenuFontColor: grey;
 					}
 				}
 			}
+
 		}	
 	}
 }
@@ -170,6 +176,9 @@ header#demo-header {
 		@include tabletR {
 			padding-top: 5.5%;
 		}
+		@include phoneR {
+			display: none;
+		}
 		& a {
 			background: $buttonbackcolor;
 			padding: 3% 3% 3% 3%;
@@ -179,11 +188,6 @@ header#demo-header {
 			text-transform: uppercase;
 			color: white;
 			font-size: 1.25em;
-			// vertical-align: baseline;
-			// display: inline-block;
-			// position: absolute;
-			// top: 50%;
-			// @include transformTranslate(0,-50%);
 			&:first-child {
 				margin-left: 13px;
 			}
@@ -217,13 +221,23 @@ header#demo-header {
 		@include tabletR {
 			padding-top: 3.5%;
 		}
+		@include phoneR {
+			padding-top: 4.5%;
+			padding-left: 5%;
+		}
 		& a {
 			display: inline;
-			height: 4em;
-			width: 4em;
-			line-height: 3.75em;
+			@include desktopRHD {
+				height: 4em;
+				width: 4em;
+				line-height: 3.75em;
+				margin: 5px;
+			}
+			// height: 4em;
+			// width: 4em;
+			// line-height: 3.75em;
 			padding: 0;
-			margin: 5px;
+			// margin: 5px;
 			// position: absolute;
 			// top: -3em;
 			// right: 3em;

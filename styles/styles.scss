@@ -41,3 +41,8 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+// for some mysterious reason a dot kept appearing in the header fixed nav menu so I decided to set that global li's would be default list-style-type: none unless specified otherwise.
+li {
+	list-style-type: none;
+}

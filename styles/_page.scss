@@ -27,6 +27,9 @@
 	padding-top: 5%;
 	.content {
 		@include column(6);
+		@include phoneR {
+			@include column(12);
+		}
 		& .title {
 			& h2 {
 				font-weight: bold;
@@ -51,6 +54,9 @@
 
 	.sidebar {
 		@include column(6);
+		@include phoneR {
+			@include column(12);
+		}
 		& .slist {
 			text-align: center;
 			& li {
@@ -83,9 +89,15 @@
 		& .stwo-col {
 			& .sbox1 {
 				@include column(6);
+				@include phoneR {
+					@include column(12);
+				}
 			}
 			& .sbox2 {
 				@include column(6);
+				@include phoneR {
+					@include column(12);
+				}
 			}
 			& .sbox1,.sbox2 {
 				text-align: center;
@@ -93,11 +105,19 @@
 					font-weight: bold;
 					text-transform: uppercase;
 				}
+				& ul {
+					// if you don't add margin:0 and padding: 0 the li elements won't appear very centred at all despite using text-align:center
+					margin: 0;
+					padding: 0;
+				}
 				& li {
 					list-style-type: none;
 					padding-top: 3%;
 					padding-bottom: 3%;
 					border-bottom: 1px solid lightgrey;
+					@include phoneR {
+						padding-left: 0;
+					}
 					&:first-child {
 						padding-top: 6%;
 					}

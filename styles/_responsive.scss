@@ -13,6 +13,13 @@
 	}
 }
 
+@mixin phabletR {
+	// Landscape phone to portrait tablet
+	@media (max-width: 720px) {
+		@content;
+	}
+}
+
 @mixin tabletR {
 	// Landscape phone to portrait tablet
 	@media (max-width: 768px) {
@@ -36,6 +43,11 @@
 
 // custom media queries
 
+@mixin phoneMenuItemsR {
+	@media (min-width: 481px) {
+		@content;
+	}
+}
 
 
 ////////////////////////////////////////////////
