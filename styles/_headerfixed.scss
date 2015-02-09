@@ -227,21 +227,15 @@ header#demo-header {
 		}
 		& a {
 			display: inline;
+			// ironically I commented out these same lines which screwed up the navbar on desktop size
+			// I required this because at this size the icon nav buttons were bumping into each other and required margins.  I suppose I could have eliminated the lines however that would have meant adjusting several other sections so I didn't both and simply wrote a media query for this condition.
 			@include desktopRHD {
 				height: 4em;
 				width: 4em;
 				line-height: 3.75em;
 				margin: 5px;
 			}
-			// height: 4em;
-			// width: 4em;
-			// line-height: 3.75em;
 			padding: 0;
-			// margin: 5px;
-			// position: absolute;
-			// top: -3em;
-			// right: 3em;
-			// @include transitionEffectSelected(0.15s);
 		}
 		& a.back {
 			@include headerFixedIconButtons;
