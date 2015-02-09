@@ -1,0 +1,168 @@
+html(lang="en")
+	head
+		include ./includes/meta.jade
+		include ./includes/links.jade
+	body
+		//- ===================================
+		//- HEADER FIXED
+		//- ===================================
+		//- This section is a position fixed header bar that stays in place
+
+		header#demo-header
+			//- p Wildfire CSS
+			.buttonContainer
+				a(href="#") Online Shop
+				a(href="#") Top 10
+				a(href="#") Business
+				a(href="#") Design &amp; Art
+			//- a(href="#") Free Download (3,360)
+			.iconContainer
+				//- span.fa.fa-home
+				a(href="#",class='button square back')
+					span.fa.fa-home.fa-lg
+				//- span.fa.fa-download
+				a(href="#",class='button square download')
+					span.fa.fa-download.fa-lg
+				//- span.fa.fa-angle-left
+				a(href="#",class='button square left')
+					span.fa.fa-angle-left.fa-lg
+				//- span.fa.fa-angle-right
+				a(href="#",class='button square right')
+					span.fa.fa-angle-right.fa-lg
+				span.fa.fa-align-justify.fa-lg.specialNavMenu   Menu
+				ul.responsiveNavList
+					li
+						a(href="#") Home
+					li
+						a(href="#") Download
+					li
+						a(href="#") Left
+					li
+						a(href="#") Right
+		
+		//- ===================================
+		//- NAVBAR
+		//- ===================================
+		#header.container
+			.wrapper.clearfix
+				.themeTitleBox
+					i.fa.fa-bug.fa-2x
+					a(href="#",class='themeName') Wildcat
+				.navbarBox
+					ul
+						li
+							a(href="#",class='homePage') Homepage
+						li
+							a(href="#") Our Clients
+						li
+							a(href="#") About Us
+						li
+							a(href="#") Careers
+						li
+							a(href="#") Contact Us
+
+		//- ===================================
+		//- HEADER FEATURED
+		//- ===================================
+		#header-featured
+			.wrapper.clearfix
+				.featuredContainer
+					h2#banner Alea iacta est
+					p This is 
+						strong Wildcat
+						|, a free, fully standards-compliant CSS template adapted from a design from 
+						a(href="#") TEMPLATED
+						| .  The photos in this template are from 
+						a(href="#") Lorem Pixel
+						| .  This free template is released under the 
+						a(href="#") Creative Commons Attribution
+						|  license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it.
+					a(href="#",class="headerTitleButton") Invictus Romulus
+		
+		//- ===================================
+		//- PAGE
+		//- ===================================
+		#page.container
+			.wrapper.clearfix
+				.content
+					.title
+						h2 Welcome to our web site
+						span.byline Lorem ipsum dolor sit amet, consectetur
+					img(src="http://lorempixel.com/700/467", alt="Lorem")
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias nesciunt, quaerat velit est obcaecati voluptate commodi facilis praesentium. Eveniet voluptatum necessitatibus, hic asperiores doloremque tempora numquam quisquam, repellat possimus quasi dignissimos neque unde. Omnis, dolorum veniam quod nostrum perferendis. Voluptatem perferendis pariatur sed voluptates mollitia soluta numquam alias. Velit reprehenderit quia, veniam vel ea laboriosam nobis dignissimos eius. Laboriosam odio, voluptates iusto animi obcaecati. Natus optio quam praesentium perspiciatis adipisci sit error, vitae unde distinctio ipsam, in at iste officiis qui enim! Delectus perferendis quia eveniet illum reprehenderit, accusantium odit, distinctio aliquam laborum tempore commodi voluptatem, officia earum quibusdam qui!
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam esse enim, odio tempora est! Saepe amet fuga nobis consequuntur delectus incidunt, excepturi harum, nam quis perferendis dolore rem non nemo, repudiandae quae. Tenetur assumenda molestiae sed soluta autem, laborum dolorem voluptate nesciunt fugiat sint consectetur quisquam architecto! Inventore vitae possimus deleniti cumque numquam vel, sapiente porro provident obcaecati alias totam iste ad, assumenda natus eveniet. Voluptates quam, hic, minima molestias eligendi id rerum quod, expedita delectus, nam ut. Libero, minima similique vel accusantium nesciunt, deleniti incidunt nihil atque amet ea veniam quaerat, tenetur delectus optio dolore pariatur, velit facilis aspernatur.
+				.sidebar
+					.slist
+						ul
+							li
+								h3 Lorem ipsum dolor sit.
+								a(href="#") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eius expedita at necessitatibus in enim.
+							li
+								h3 Lorem ipsum dolor sit.
+								a(href="#") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eius expedita at necessitatibus in enim.
+							li
+								h3 Lorem ipsum dolor sit.
+								a(href="#") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eius expedita at necessitatibus in enim.
+					.stwo-col
+						.sbox1
+							h2 Lorem ipsum
+							ul
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+						.sbox2
+							h2 Lorem ipsum
+							ul
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+								li
+									a(href="#") Lorem ipsum dolor sit.
+		
+		//- ===================================
+		//- FEATURED WRAPPER
+		//- ===================================
+		#featured-wrapper
+			.wrapper.clearfix
+				.main-title
+					h2 Lorem ipsum dolor.
+					span.byline Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				//- .eboxHolder
+				.ebox1.eboxContainer
+					i.fa.fa-cogs.fa-3x
+					h2 Lorem ipsum dolor.
+					span.byline Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ea temporibus, voluptatum voluptas consequuntur, ipsam sed provident amet, laborum totam repellendus maxime quo nam, incidunt tempora quam debitis culpa magni! Hic obcaecati enim, ipsam error officia molestias quis. Vel ad similique, temporibus voluptate officia modi dicta nemo nisi! Voluptatum, a.
+					a(href="#") Lorem ipsum
+				.ebox2.eboxContainer
+					i.fa.fa-sun-o.fa-3x
+					h2 Lorem ipsum dolor.
+					span.byline Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ea temporibus, voluptatum voluptas consequuntur, ipsam sed provident amet, laborum totam repellendus maxime quo nam, incidunt tempora quam debitis culpa magni! Hic obcaecati enim, ipsam error officia molestias quis. Vel ad similique, temporibus voluptate officia modi dicta nemo nisi! Voluptatum, a.
+					a(href="#") Lorem ipsum
+		
+		//- ===================================
+		//- COPYRIGHT FOOTER
+		//- ===================================
+		#copyright.container
+			.wrapper.clearfix
+				p &copy; Untitled.  All Rights Reserved. | Photos By 
+					a(href="http://lorempixel.com", target="_blank") Lorem Pixel
+					|  | Original Design By  
+					a(href="http://templated.co/untamed", target="_blank") Templated

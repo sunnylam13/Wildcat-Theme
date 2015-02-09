@@ -1,0 +1,227 @@
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+@import 'grid';
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+$buttonbackcolor: #FF6600;
+$iconColor: lightgrey;
+$downloadIconBack: lightgreen;
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+@mixin transformTranslate($x,$y) {
+	-webkit-transform: translate($x,$y);
+	-moz-transform: translate($x,$y);
+	-o-transform: translate($x,$y);
+	-ms-transform: translate($x,$y);
+}
+
+@mixin transitionEffectAll ($time) {
+	-webkit-transition: all $time;
+	-moz-transition: all $time;
+	-o-transition: all $time;
+	-ms-transition: all $time;
+}
+
+@mixin transitionEffectSelected ($time) {
+	-webkit-transition: color $time ease-in-out, border-color $time ease-in-out, background $time ease-in-out, opacity $time ease-in-out;
+	-moz-transition: color $time ease-in-out, border-color $time ease-in-out, background $time ease-in-out, opacity $time ease-in-out;
+	-o-transition: color $time ease-in-out, border-color $time ease-in-out, background $time ease-in-out, opacity $time ease-in-out;
+	-ms-transition: color $time ease-in-out, border-color $time ease-in-out, background $time ease-in-out, opacity $time ease-in-out;
+}
+
+@mixin headerFixedIconButtons {
+	padding: 1.5em;
+	border: 2px solid $iconColor;
+	border-radius: 3px;
+	color: grey;
+	@include transitionEffectSelected(0.15s);
+	@include desktopR {
+		// padding: 1em;
+		display: none;
+	}
+	&:hover {
+		color: $downloadIconBack;
+		border: 2px solid $downloadIconBack;
+	}
+}
+
+@mixin headerFixedArrowButtons {
+	padding-right: 1.9em;
+	padding-left: 1.9em;
+	@include desktopR {
+		// padding-right: 1.4em;
+		// padding-left: 1.4em;
+	}
+}
+
+@mixin responsiveNavMenu {
+	& .specialNavMenu {
+		display: inline-block;
+		color: darken(lightgrey,30%);
+		border: 2px solid lightgrey;
+		padding: 1em 1.2em 1em 1.2em;
+		border-radius: 5px;
+		@include transitionEffectSelected(0.15s);
+		// text-shadow: 0 0 1px #203A8B;
+		&:hover {
+			color: $downloadIconBack;
+			border: 2px solid $downloadIconBack;
+		}
+	}
+}
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+header#demo-header {
+	position: fixed;
+	height:109px;
+	background: white;
+	display: block;
+	// we use the value of 13 to get the navbar all across the page
+	// looks like 12.5 was better... 13 was too long which caused the icon nav buttons to skirt perilously close to the right edge
+	@include column(12.5);
+	margin: 0;
+	// we set the z-index as high as it goes to be rid of the effect where the navbar appears above the fixed header
+	z-index: 10000;
+	border-bottom: 1px solid lightgrey;
+	// the padding top is necessary to push the elements down, position them and manually centre them
+	// you could also manually push each of the subcontainers below down giving you more leeway to position them -- comment out this padding top then
+	// padding-top:3%;
+	vertical-align: baseline;
+	& .buttonContainer {
+		position: relative;
+		// width: 100%;
+		height:100%;
+		// width: 75%;
+		@include column(9);
+		// padding: 0;
+		// padding-top: 0.5%;
+		padding-top: 3.4%;
+		padding-right: 0;
+		margin: 0;
+		vertical-align: baseline;
+		@include desktopR {
+			// @include column(6);
+			padding-top: 4.6%;
+		}
+		& a {
+			background: $buttonbackcolor;
+			padding: 3% 3% 3% 3%;
+			margin: 2px;
+			border-radius: 5px;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: white;
+			font-size: 1.25em;
+			// vertical-align: baseline;
+			// display: inline-block;
+			// position: absolute;
+			// top: 50%;
+			// @include transformTranslate(0,-50%);
+			&:first-child {
+				margin-left: 13px;
+			}
+			&:nth-child(2) {
+				background: grey;
+			}
+		}
+	}
+	& .iconContainer {
+		// position: relative;
+		@include column(3);
+		margin: 0;
+		padding: 0;
+		padding-top: 2.3%;
+		margin-bottom: 3%;
+		vertical-align: baseline;
+		& .specialNavMenu {
+			display: none;
+		}
+		@include desktopR {
+			// @include column(6);
+			padding-left: 0;
+			padding-right: 0;
+			margin-bottom: 0;
+			padding-top: 3.2%;
+			@include responsiveNavMenu;
+		}
+		& a {
+			display: inline;
+			height: 4em;
+			width: 4em;
+			line-height: 3.75em;
+			padding: 0;
+			margin: 5px;
+			// position: absolute;
+			// top: -3em;
+			// right: 3em;
+			// @include transitionEffectSelected(0.15s);
+		}
+		& a.back {
+			@include headerFixedIconButtons;
+		}
+		& a.download {
+			@include headerFixedIconButtons;
+			background:$downloadIconBack;
+			color: white;
+			&:hover {
+				background: darken($downloadIconBack,10%);
+			}
+		}
+		& a.left {
+			@include headerFixedIconButtons;
+			@include headerFixedArrowButtons;
+		}
+		& a.right {
+			@include headerFixedIconButtons;
+			@include headerFixedArrowButtons;
+		}
+		
+		
+		// & .button.square span {
+		// 	// this is very interesting... by turning the span text into position absolute you make it vanish off the page
+		// 	position: absolute;
+		// 	text-indent: -9999px;
+		// }
+		// & .button span {
+		// 	display: none;
+		// }
+		// & .button.square.back span {
+		// 	position: relative;
+		// 	& ::before {
+		// 		position:absolute;
+		//         font-family: FontAwesome;
+		//         top:0;
+		//         left:-5px;
+		//         content: "\f015";
+		//         color:$iconColor;
+		// 	}
+		// }
+		// & span.fa.fa-home {
+		// 	position: relative;
+		// 	&:before {
+		// 		position:absolute;
+		//         font-family: FontAwesome;
+		//         top:0;
+		//         left:-5px;
+		//         content: "\f015";
+		//         color:black;
+		// 	}
+		// }
+	}
+}

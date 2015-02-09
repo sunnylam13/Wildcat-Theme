@@ -1,0 +1,209 @@
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+@import 'grid';
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+#page.container {
+	padding-top: 5%;
+	.content {
+		@include column(6);
+		& .title {
+			& h2 {
+				font-weight: bold;
+				text-align: center;
+				font-size: 2em;
+			}
+			& span.byline {
+				text-transform: uppercase;
+				text-align: center;
+				display: block;
+			}
+		}
+		& img {
+			padding-top: 8%;
+			max-width: 100%;
+		}
+		& p {
+			text-align: center;
+			padding-top: 2%;
+		}
+	}
+
+	.sidebar {
+		@include column(6);
+		& .slist {
+			text-align: center;
+			& li {
+				list-style-type: none;
+				border-bottom:1px solid lightgrey;
+				padding-bottom: 9%;
+				padding-top: 9%;
+				&:first-child {
+					padding-top: 3%;
+				}
+				&:last-child {
+					border: 0;
+				}
+			}
+			& h3 {
+				text-transform: uppercase;
+			}
+			& a {
+				color: black;
+				text-decoration: none;
+				&:link {
+					color:black;
+				}
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+		}
+		& .stwo-col {
+			& .sbox1 {
+				@include column(6);
+			}
+			& .sbox2 {
+				@include column(6);
+			}
+			& .sbox1,.sbox2 {
+				text-align: center;
+				& h2 {
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+				& li {
+					list-style-type: none;
+					padding-top: 3%;
+					padding-bottom: 3%;
+					border-bottom: 1px solid lightgrey;
+					&:first-child {
+						padding-top: 6%;
+					}
+					&:last-child {
+						border-bottom: 0;
+					}
+				}
+				& a {
+					text-decoration: none;
+					color: blue;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+// .content {
+// 	@include column(6);
+// 	& .title {
+// 		& h2 {
+// 			font-weight: bold;
+// 			text-align: center;
+// 			font-size: 2em;
+// 		}
+// 		& span.byline {
+// 			text-transform: uppercase;
+// 			text-align: center;
+// 		}
+// 	}
+// 	& img {
+// 		padding-top: 8%;
+// 		max-width: 100%;
+// 	}
+// 	& p {
+// 		text-align: center;
+// 		padding-top: 2%;
+// 	}
+// }
+
+// .sidebar {
+// 	@include column(6);
+// 	& .slist {
+// 		text-align: center;
+// 		& li {
+// 			list-style-type: none;
+// 			border-bottom:1px solid lightgrey;
+// 			padding-bottom: 9%;
+// 			padding-top: 9%;
+// 			&:first-child {
+// 				padding-top: 3%;
+// 			}
+// 			&:last-child {
+// 				border: 0;
+// 			}
+// 		}
+// 		& h3 {
+// 			text-transform: uppercase;
+// 		}
+// 		& a {
+// 			color: black;
+// 			text-decoration: none;
+// 			&:link {
+// 				color:black;
+// 			}
+// 			&:hover {
+// 				text-decoration: underline;
+// 			}
+
+// 		}
+// 	}
+// 	& .stwo-col {
+// 		& .sbox1 {
+// 			@include column(6);
+// 		}
+// 		& .sbox2 {
+// 			@include column(6);
+// 		}
+// 		& .sbox1,.sbox2 {
+// 			text-align: center;
+// 			& h2 {
+// 				font-weight: bold;
+// 				text-transform: uppercase;
+// 			}
+// 			& li {
+// 				list-style-type: none;
+// 				padding-top: 3%;
+// 				padding-bottom: 3%;
+// 				border-bottom: 1px solid lightgrey;
+// 				&:first-child {
+// 					padding-top: 6%;
+// 				}
+// 				&:last-child {
+// 					border-bottom: 0;
+// 				}
+// 			}
+// 			& a {
+// 				text-decoration: none;
+// 				color: blue;
+// 				&:hover {
+// 					text-decoration: underline;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+

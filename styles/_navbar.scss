@@ -1,0 +1,118 @@
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+@import 'grid';
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+$navbarfontcolor: white;
+$navbarbackcolor: #333333;
+$buttonbackcolor: orange;
+$buttonspacepadding: 10px 20px 10px 20px;
+$iconColor:orange;
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+#header.container {
+	position: relative;
+	// we specifically set the fixed header to a height of ___ so we need to adjust the navbar... by adding position relative and then pushing it down from the top by ____
+	// also adding this had the unintentional side effect of fixing the ugly white bar across the screen that I couldn't get rid of
+	top: 109px;
+	background: $navbarbackcolor;
+	margin-bottom: 0;
+	padding-top: 2.5%;
+	& .themeTitleBox {
+		@include column(3);
+		& a.themeName {
+			position: relative;
+			// &::before {
+			// 	// replace the content value with the corresponding value from the list below
+			//     content: "\f188";
+			//     font-family: FontAwesome;
+			//     font-style: normal;
+			//     font-weight: normal;
+			//     text-decoration: inherit;
+			// 	//*--adjust as necessary--*/
+			//     color: orange;
+			//     font-size: 18px;
+			//     padding-right: 1.5em;
+			//     position: absolute;
+			//     top: 10px;
+			//     left: 0;
+			// }
+			color:$navbarfontcolor;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 2em;
+			// padding-left: 1.7em;
+			font-weight: bold;
+			&:visited {
+				color: $navbarfontcolor;
+			}
+			&:hover {
+				color: $navbarfontcolor;
+			}
+			&:link {
+				color: $navbarfontcolor;
+			}
+			// &:before {
+			// 	position:absolute;
+			// 	font-family: FontAwesome;
+			// 	top:0;
+			// 	left:-5px;
+			// 	content: "\f188"; //<--- this is your text. You can also use UTF-8 character codes as I do here
+			// 	background: $iconColor;
+			// 	background: $iconColor;
+			// }
+		}
+		& i.fa {
+			color: $buttonbackcolor;
+			margin-right: 1em;
+		}
+	}
+	
+	& .navbarBox {
+		@include column(9);
+		& ul {
+			float: right;
+			& li {
+				list-style-type: none;
+				float: left;
+				& a {
+					color: $navbarfontcolor;
+					// padding: 2% 5% 2% 5%;
+					padding: $buttonspacepadding;
+					text-transform: uppercase;
+					text-decoration: none;
+				}
+			}
+		}
+		.homePage {
+			background: $buttonbackcolor;
+			border-radius: 50px;
+			padding: $buttonspacepadding;
+			text-transform: uppercase;
+			text-decoration: none;
+			@include transitionEffectAll(0.5s);
+			&:hover {
+				background: darken($buttonbackcolor,10%);
+			}
+		}
+	}
+}
+

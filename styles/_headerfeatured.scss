@@ -1,0 +1,68 @@
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+@import 'grid';
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+$headerTextColor: darken(lightgrey,10%);
+$headerLinkColor: white;
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+#header-featured {
+	margin-top: 0;
+	background: #333333;
+	text-align: center;
+	color: $headerTextColor;
+	padding-bottom: 10%;
+	& .featuredContainer {
+		width: 80%;
+		margin: 0 auto;
+	}
+	& h2 {
+		color: $headerLinkColor;
+		padding-top: 10%;
+		font-weight: 400;
+		font-size: 5em;
+	}
+	& p {
+		padding-top: 4%;
+		padding-bottom: 8%;
+		line-height: 180%;
+		font-size: 1.25em;
+	}
+	& strong {
+		color:$headerLinkColor;
+	}
+	& a {
+		color:$headerLinkColor;
+	}
+	& .headerTitleButton {
+		background: orange;
+		padding: 3% 7% 3% 7%;
+		border-radius: 50px;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 1.5em;
+		@include transitionEffectAll(0.5s);
+		&:hover {
+			background: darken(orange,10%);
+		}
+	}
+}

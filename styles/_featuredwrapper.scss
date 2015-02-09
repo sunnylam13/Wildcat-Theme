@@ -1,0 +1,106 @@
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+@import 'grid';
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+$linkcolorback:orange;
+$linkfontcolor:white;
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+#featured-wrapper {
+	padding-bottom: 5%;
+	height: auto;
+}
+
+.main-title {
+	text-align: center;
+	// @include column(12);
+	margin-bottom: 3%;
+	& h2 {
+		font-size: 4em;
+		margin-bottom: 5px;
+	}
+	& span.byline {
+		font-size: 2em;
+	}
+}
+
+// .eboxHolder {
+// 	@include column(12);
+// }
+
+.ebox1,.ebox2 {
+	display: inline-block;
+	// width: 49%;
+	@include column(6);
+	padding: 2%;
+	text-align: center;
+	& h2 {
+		font-size: 2em;
+		margin-bottom: 5px;
+	}
+	& .byline {
+		font-size: 0.8em;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	& p {
+		padding-top: 5%;
+		padding-bottom: 8%;
+		line-height: 180%;
+		font-weight: 200;
+	}
+	& i.fa {
+		border-radius: 50%;
+		background:orange;
+		padding: 2%;
+		color: white;
+		width: 3em;
+		height: 3em;
+		display: inline-block;
+		// interesting... you can use line-height to help position the FA icon so it's as close to vertical centred as possible
+		// does mean that if the screen size changes things may be messy especially if the width and size of the icon was set with pixels instead of em or %
+		line-height: 2.6em;
+		font-size: 4em;
+		margin-bottom: 1em;
+	}
+	& a {
+		display: inline;
+		text-align: center;
+		margin-left: 0 auto;
+		margin-right: 0 auto;
+		background: $linkcolorback;
+		color: $linkfontcolor;
+		padding: 3% 9% 3% 9%;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 30px;
+		@include transitionEffectAll(0.5s);
+		&:hover {
+			background:darken($linkcolorback,10);
+		}
+	}
+}
+
+.ebox1 {
+	border-right: 1px solid lightgrey;
+}
