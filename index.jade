@@ -2,6 +2,7 @@ html(lang="en")
 	head
 		include ./includes/meta.jade
 		include ./includes/links.jade
+		//- include ./includes/scripts.jade
 	body
 		//- ===================================
 		//- HEADER FIXED
@@ -103,7 +104,7 @@ html(lang="en")
 					.title
 						h2 Welcome to our web site
 						span.byline Lorem ipsum dolor sit amet, consectetur
-					img(src="http://lorempixel.com/700/467", alt="Lorem")
+					img#pageImage(src="http://lorempixel.com/700/467", alt="Lorem")
 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias nesciunt, quaerat velit est obcaecati voluptate commodi facilis praesentium. Eveniet voluptatum necessitatibus, hic asperiores doloremque tempora numquam quisquam, repellat possimus quasi dignissimos neque unde. Omnis, dolorum veniam quod nostrum perferendis. Voluptatem perferendis pariatur sed voluptates mollitia soluta numquam alias. Velit reprehenderit quia, veniam vel ea laboriosam nobis dignissimos eius. Laboriosam odio, voluptates iusto animi obcaecati. Natus optio quam praesentium perspiciatis adipisci sit error, vitae unde distinctio ipsam, in at iste officiis qui enim! Delectus perferendis quia eveniet illum reprehenderit, accusantium odit, distinctio aliquam laborum tempore commodi voluptatem, officia earum quibusdam qui!
 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam esse enim, odio tempora est! Saepe amet fuga nobis consequuntur delectus incidunt, excepturi harum, nam quis perferendis dolore rem non nemo, repudiandae quae. Tenetur assumenda molestiae sed soluta autem, laborum dolorem voluptate nesciunt fugiat sint consectetur quisquam architecto! Inventore vitae possimus deleniti cumque numquam vel, sapiente porro provident obcaecati alias totam iste ad, assumenda natus eveniet. Voluptates quam, hic, minima molestias eligendi id rerum quod, expedita delectus, nam ut. Libero, minima similique vel accusantium nesciunt, deleniti incidunt nihil atque amet ea veniam quaerat, tenetur delectus optio dolore pariatur, velit facilis aspernatur.
 				.sidebar
@@ -181,3 +182,5 @@ html(lang="en")
 					a(href="http://lorempixel.com") Lorem Pixel
 					|  | Original Design By  
 					a(href="http://templated.co/untamed") Templated
+
+		include ./includes/scripts.jade
