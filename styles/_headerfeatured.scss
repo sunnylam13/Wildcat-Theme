@@ -30,16 +30,25 @@ $headerLinkColor: white;
 	background: #333333;
 	text-align: center;
 	color: $headerTextColor;
+	padding-top: 10%;
 	padding-bottom: 10%;
+	@include phoneR {
+		padding-top: 3%;
+		padding-bottom: 10%;
+	}
 	& .featuredContainer {
 		width: 80%;
 		margin: 0 auto;
 	}
 	& h2 {
 		color: $headerLinkColor;
-		padding-top: 10%;
+		// padding-top: 10%;
 		font-weight: 400;
 		font-size: 5em;
+		@include phoneR {
+			// padding-top: 5%;
+			padding-top: 0;
+		}
 	}
 	& p {
 		padding-top: 4%;

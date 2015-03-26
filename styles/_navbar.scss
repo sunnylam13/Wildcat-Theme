@@ -36,6 +36,12 @@ $iconColor:orange;
 	background: $navbarbackcolor;
 	margin-bottom: 0;
 	padding-top: 2.5%;
+	@include phoneR {
+		// position: static;
+		top: 0;
+		// padding-top: 0;
+		padding-left: 2.5%;
+	}
 	& .themeTitleBox {
 		@include column(3);
 		@include tabletR {
