@@ -7,44 +7,20 @@ jQuery(document).ready(function($) {
 //////////////////////////////////////////////////
 // FUNCTIONS
 
-function testActiveJS (argument) {
-	window.alert('jQuery is roaring to go!');
-}
-
-function pictureChanger1 () {
-	$('#pageImage').focus(function(event) {
-		/* Act on the event */
-		$(this).addClass('imageBlur');
+function responsiveMenuHoverV1 () {
+	$('.specialNavMenu').mouseover(function(event) {
+		$('.responsiveNavList').css('display', 'list-item');
 	});
 
-	$('#pageImage').blur(function(event) {
-		/* Act on the event */
-		$(this).removeClass('imageBlur');
-	});
-}
-
-function pictureChanger2 () {
-	$("#pageImage").hover(function() {
-	    $(this).addClass("imageBlur");
-	}, function() {
-	    $(this).removeClass("imageBlur");
-	});
-}
-
-function pictureChanger3 (argument) {
-	$('img#pageImage').mousemove(function(event) {
-		/* Act on the event */
-		$(this).toggleClass('imageBlur');
+	$('.responsiveNavList').mouseout(function(event) {
+		$('.responsiveNavList').css('display', 'none');
 	});
 }
 
 //////////////////////////////////////////////////
 // EXECUTION CODE
 
-// testActiveJS();
-// pictureChanger1();
-// pictureChanger2();
-// pictureChanger3();
+// responsiveMenuHoverV1();
 
 //////////////////////////////////////////////////
 

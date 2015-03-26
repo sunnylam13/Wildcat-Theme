@@ -77,6 +77,7 @@ $subNavMenuFontColor: grey;
 	}
 }
 
+// this is the sub nav menu styling and code
 @mixin responsiveSubNavMenuV1 {
 	& ul.responsiveNavList {
 		position: absolute;
@@ -94,13 +95,15 @@ $subNavMenuFontColor: grey;
 
 		&.flex-container {
 			display: flex;
-			flex-flow: column;
+			// flex-flow: column;
+			flex-flow: row wrap;
 			justify-content: flex-end;
 		}
 
 		@include phoneR {
 			// top: 101%;
-			width: auto;
+			// width: auto;
+			width: 454px;
 			// border: 1px solid grey;
 			// needed to use px to position it properly
 			// right:-415px;
@@ -108,6 +111,9 @@ $subNavMenuFontColor: grey;
 			// float: right;
 			right:-313px;
 			top:30px;
+
+			// for the CSS nav menu toggle opening
+			// display: none;
 		}
 		& li {
 			display: list-item;
@@ -135,6 +141,7 @@ $subNavMenuFontColor: grey;
 	}
 }
 
+// this is the responsive menu parent not the sub menu
 @mixin responsiveNavMenu {
 	& .mainNavBar {
 		position: relative;
@@ -195,13 +202,29 @@ $subNavMenuFontColor: grey;
 				float: none;
 				// to edit the ul.responsiveNavList sub menu simply cut and paste it out of the &:hover into a position within & li
 				@include responsiveSubNavMenuV1;
-				
 			}
 
 			// for testing purposes uncomment this one and comment out the one under hover
 			// @include responsiveSubNavMenuV1;
 		
 		}	
+	}
+}
+
+@mixin toggleMenuControlV1 {
+	input#toggle {
+		display: none;
+		&:checked ~ .responsiveNavList {
+			// unlike other cases the default value is display: list-item for .responsiveNavList so you have to use display none not something else to make it disappear
+			// make sure that input#toggle is set to being initially checked (checked='checked')
+			display: none;
+			
+			@include phoneR {
+				// the other way is to set .responsiveNavList to a default of display none and apply display list-item here
+				// the only problem is that you can't use :hover on the parent li element 
+				// display: list-item;
+			}
+		}
 	}
 }
 
@@ -397,6 +420,15 @@ header#demo-header {
 	
 	///////////////////////////////////////////////
 	
+	////////////////////////////////////////////
+	///// 		TOGGLE RESPONSIVE NAV CONTROL
+	///////////////////////////////////////////////
+	/// Enable the CSS on/off switch for the responsive nav as a back up for mobile devices where hover states don't work well
+	
+	@include toggleMenuControlV1;
+
+	////////////////////////////////////////////
+
 	
 	
 }

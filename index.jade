@@ -1,3 +1,77 @@
+
+//- ===================================
+//- 		MIXINS
+//- ===================================
+
+mixin responsiveNavIconStdV1
+	span.fa.fa-align-justify.fa-lg.specialNavMenu Menu
+
+mixin responsiveNavIconCSSV1
+	//- This is the version for the CSS nav opening of the sub menu
+	label(for='toggle')
+		span.fa.fa-align-justify.fa-lg.specialNavMenu Menu
+
+mixin navMenuToggleV1
+	input(name='toggle',type='checkbox',checked='checked')#toggle
+
+mixin responsiveNavMenuV1
+	ul.mainNavBar
+		li
+			+responsiveNavIconStdV1
+			//- +responsiveNavIconCSSV1
+			//- +navMenuToggleV1
+			ul.responsiveNavList.flex-container
+				li
+					a(href="#") Home
+				li
+					a(href="#") Download
+				li
+					a(href="#") Online Shop
+				li
+					a(href="#") Top 10
+				li
+					a(href="#") Business
+				li
+					a(href="#") Design &amp; Art
+				li
+					a(href="#") Our Clients
+				li
+					a(href="#") About Us
+				li
+					a(href="#") Careers
+				li
+					a(href="#") Contact Us
+
+mixin responsiveNavMenuV2
+	ul.mainNavBar
+		li
+			//- +responsiveNavIconStdV1
+			+responsiveNavIconCSSV1
+			+navMenuToggleV1
+			ul.responsiveNavList.flex-container
+				li
+					a(href="#") Home
+				li
+					a(href="#") Download
+				li
+					a(href="#") Online Shop
+				li
+					a(href="#") Top 10
+				li
+					a(href="#") Business
+				li
+					a(href="#") Design &amp; Art
+				li
+					a(href="#") Our Clients
+				li
+					a(href="#") About Us
+				li
+					a(href="#") Careers
+				li
+					a(href="#") Contact Us
+
+//- END MIXINS
+
 html(lang="en")
 	head
 		include ./includes/meta.jade
@@ -30,30 +104,7 @@ html(lang="en")
 				//- span.fa.fa-angle-right
 				a(href="#",class='button square right')
 					span.fa.fa-angle-right.fa-lg
-				ul.mainNavBar
-					li
-						span.fa.fa-align-justify.fa-lg.specialNavMenu Menu
-						ul.responsiveNavList.flex-container
-							li
-								a(href="#") Home
-							li
-								a(href="#") Download
-							li
-								a(href="#") Online Shop
-							li
-								a(href="#") Top 10
-							li
-								a(href="#") Business
-							li
-								a(href="#") Design &amp; Art
-							li
-								a(href="#") Our Clients
-							li
-								a(href="#") About Us
-							li
-								a(href="#") Careers
-							li
-								a(href="#") Contact Us
+				+responsiveNavMenuV2
 
 		
 		//- ===================================
