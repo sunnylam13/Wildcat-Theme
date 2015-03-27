@@ -57,17 +57,34 @@
 	}
 
 	.sidebar {
+		margin: 0;
+		padding: 0;
 		@include column(6);
 		@include phoneR {
 			@include column(12);
 		}
 		& .slist {
 			text-align: center;
+			& ul {
+				margin: 0;
+				padding: 0;
+				@include phoneR {
+					// @include column(12);
+					// padding-right: 3%;
+					// padding-left: 0;
+					text-align: center;
+				}
+			}
 			& li {
 				list-style-type: none;
 				border-bottom:1px solid lightgrey;
 				padding-bottom: 9%;
 				padding-top: 9%;
+				@include phoneR {
+					// @include column(12);
+					// padding-right: 3%;
+					display: inline-block;
+				}
 				&:first-child {
 					padding-top: 3%;
 				}

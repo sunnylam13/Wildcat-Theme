@@ -32,10 +32,16 @@ $iconColor:orange;
 	position: relative;
 	// we specifically set the fixed header to a height of ___ so we need to adjust the navbar... by adding position relative and then pushing it down from the top by ____
 	// also adding this had the unintentional side effect of fixing the ugly white bar across the screen that I couldn't get rid of
-	top: 109px;
+	top: 6.8125em;
 	background: $navbarbackcolor;
 	margin-bottom: 0;
 	padding-top: 2.5%;
+	@include iphone6Plus736LandR {
+		height: 6.8125em;
+	}
+	@include iphone6Minus568LandR {
+		top: 6.8125em;
+	}
 	@include phoneR {
 		// position: static;
 		top: 0;
@@ -90,6 +96,7 @@ $iconColor:orange;
 		@include phoneR {
 			display: none;
 		}
+
 		& ul {
 			float: right;
 			@include tabletR {
@@ -115,8 +122,19 @@ $iconColor:orange;
 					padding: $buttonspacepadding;
 					text-transform: uppercase;
 					text-decoration: none;
+					// font-size: $basefontsize*.714285714;
+					@include iphone6Minus568LandR {
+						font-size: $basefontsize*.714285714;
+					}
 				}
 			}
+		}
+		& .flex-container {
+			display: flex;
+			flex-wrap: row nowrap;
+			justify-content: center;
+			align-items: baseline;
+			align-content: center;
 		}
 		.homePage {
 			background: $buttonbackcolor;
